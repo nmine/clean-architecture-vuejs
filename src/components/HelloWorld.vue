@@ -20,10 +20,9 @@
       ></v-text-field>
 
       <v-btn
-          :disabled="!valid"
           color="success"
           class="mr-4"
-          @click="validate"
+          @click="createSession"
       >
         Validate
       </v-btn>
@@ -51,7 +50,11 @@ export default {
     }
   },
   methods: {
-
+    createSession() {
+      this.$store.commit('increment')
+      console.log(this.$store.state.count)
+      //this.facilitator.create(this.member)
+    }
   }
 }
 
