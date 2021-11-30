@@ -36,24 +36,17 @@ import {Member} from "./Member.js"
 export default {
 
   name: 'HelloWorld',
-
   data: function () {
     return {
       member: new Member(),
-      facilitator: this.facilitatorModule,
-    }
-  },
-  props: {
-    facilitatorModule: {
-      type: Object,
-      required: true
     }
   },
   methods: {
     createSession() {
       this.$store.commit('increment')
       console.log(this.$store.state.count)
-      //this.facilitator.create(this.member)
+      console.log(this.user)
+      this.$memberModule.createMember()
     }
   }
 }
