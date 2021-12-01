@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import {Member} from "./Member.js"
+import {Member} from "../core/domain/Member.js"
 
 export default {
 
@@ -43,10 +43,7 @@ export default {
   },
   methods: {
     createSession() {
-      this.$store.commit('increment')
-      console.log(this.$store.state.count)
-      console.log(this.user)
-      this.$memberModule.createMember()
+      this.$memberUseCases.createMember()
     }
   }
 }

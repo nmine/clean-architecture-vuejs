@@ -3,9 +3,15 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+const getDefaultState = () => {
+    return {
+        user: {}
+    }
+}
 export const store = new Vuex.Store({
-    state: {
-        count: 0
+    state: getDefaultState(),
+    getters: {
+        getLoggedUser: state => state.user,
     },
     mutations: {
         increment(state) {

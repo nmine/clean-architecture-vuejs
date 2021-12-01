@@ -3,18 +3,18 @@ import Vue from "vue";
 Vue.mixin({
     beforeCreate() {
         const options = this.$options;
-        if (options.memberModule)
-            this.$memberModule = options.memberModule;
-        else if (options.parent && options.parent.$memberModule)
-            this.$memberModule = options.parent.$memberModule;
+        if (options.memberUseCases)
+            this.$memberUseCases = options.memberUseCases;
+        else if (options.parent && options.parent.$memberUseCases)
+            this.$memberUseCases = options.parent.$memberUseCases;
     }
 });
 
-export default function makeMemberModule(memberRepository = {}) {
-    return new MemberModule(memberRepository)
+export default function makeMemberUseCases(memberRepository = {}) {
+    return new MemberUseCases(memberRepository)
 }
 
-export class MemberModule {
+export class MemberUseCases {
     constructor(memberRepository) {
         this.memberRepository = memberRepository
     }
