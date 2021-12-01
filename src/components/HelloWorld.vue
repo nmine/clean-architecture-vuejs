@@ -42,8 +42,8 @@ export default {
     }
   },
   methods: {
-    createSession() {
-      this.$memberUseCases.createMember()
+    getMember() {
+      this.$memberUseCases.retrieveMember()
     }
   }
 }

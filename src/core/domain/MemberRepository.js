@@ -7,10 +7,8 @@ export class MemberRepository {
         this.store = store
     }
 
-    retrieveMember(sessionId) {
-        console.log(sessionId)
-        this.store.commit('increment')
-        console.log(this.$store.state.count)
+    retrieveMember() {
+        return this.store.getters.member
     }
 
     createMember() {

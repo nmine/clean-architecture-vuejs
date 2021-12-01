@@ -1,8 +1,8 @@
 export class Member {
 
-    constructor() {
-        this.firstName = 'Tom'
-        this.lastName = 'qsddqsqsd'
+    constructor(firstName, lastName) {
+        this.firstName = firstName
+        this.lastName = lastName
     }
 
 }

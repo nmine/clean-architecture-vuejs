@@ -19,9 +19,8 @@ export class MemberUseCases {
         this.memberRepository = memberRepository
     }
 
-    retrieveMember(sessionId) {
-        console.log(sessionId)
-        return this.memberRepository.createMember()
+    retrieveMember() {
+        return this.memberRepository.retrieveMember()
     }
 
     createMember() {
