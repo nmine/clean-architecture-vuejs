@@ -10,26 +10,22 @@ Vue.mixin({
     }
 });
 
-export default function makeMemberModule(store = {}) {
-    return new MemberModule(store)
+export default function makeMemberModule(memberRepository = {}) {
+    return new MemberModule(memberRepository)
 }
 
 export class MemberModule {
-    constructor(store) {
-        this.store = store
+    constructor(memberRepository) {
+        this.memberRepository = memberRepository
     }
 
     retrieveMember(sessionId) {
-        return this.memberRepository.byId(sessionId).then(
-            diagnosticSession => {
-                this._currentSession =
-                    diagnosticSession
-            })
+        console.log(sessionId)
+        return this.memberRepository.createMember()
     }
 
     createMember() {
-        this.store.commit('increment')
-        console.log(this.$store.state.count)
+        return this.memberRepository.createMember()
     }
 
 }
